@@ -1,0 +1,14 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Entornos
+vnv/
+env/
+.env/
+.python-version
+
+# Sistema
+Thumbs.db
+.vscode/
+.idea/
