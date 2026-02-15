@@ -1,0 +1,28 @@
+Australian voting:
+50%: 2x Candidato top >= suma total?
+Se tiene en cuenta el primer voto de cada papeleta de votante, mientras siga vivo ese Candidato 
+
+Erdos Numbers:
+Erdos: numero 0 siempre en la DB
+No hace falta el titulo de los papers
+separar con la coma cada 2 elementos (nombre,apellido), el último puede no tener apellido. (run time error)
+
+Pueden aparecer repetidos los autores, hay que preprocesar la lista.
+
+Problema de grafos
+precompute erdos numbers with bfs
+
+
+Número de pasos hasta llegar al nodo ERDOS: número de erdos de ese nodo.
+Si un nodo no puede llegar al nodo ERDOS: infinita distancia
+
+hashtables(java,python), maps (c++) que contengan el diccionario de autores
+
+char str[300] en C tiene 299 chars, el ultimo es '0' (EndOfString)
+
+
+String search: Boyer.Moore (SAR) patrones. Necesita preoprocesar el patrón.
+
+para todas las ocurrencias: avanzar de 1 en 1 tras una Ocurrencia
+
+tree para multiples patrones a la vez?
