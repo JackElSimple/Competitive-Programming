@@ -2,38 +2,59 @@ import sys
 
 def solve():
     # Number of cases
-    n_cases = sys.stdin.readline()
-    if not n_cases:
+    input_data = sys.stdin.read().splitlines()
+    if not input_data:
         return
     
-    n_cases = int(n_cases.strip())
-    # Blank
-    sys.stdin.readline()
+    ptr = 0
+    n_cases = int(input_data[ptr])
+    ptr += 1
 
-    for case_id in range(n_cases):
-        # Number of candidates
-        n_candidates =  int(sys.stdin.readline())
-                
-        # Names of candidates
-        origen = []
-        target = []
-        for _ in range(n_candidates):
-            origen.append(sys.stdin.readline().strip())
-        for _ in range(n_candidates):
-            target.append(sys.stdin.readline().strip())
+    for case_id in range(n_cases): # Para cada caso
+        # recorrer líneas vacías
+        while ptr < len(input_data) and not input_data[ptr].strip(): 
+            ptr += 1
+        # if ptr >= len(input_data): break
+        n_candidates =  int(input_data[ptr].strip())
+        ptr += 1
 
-        while True:
-            line = sys.stdin.readline()
-            if not line or line.strip() == "":
-                break
- 
-        # 5. Línea en blanco entre casos (regla de UVa)
-        if case_id < n_cases - 1:
-            print("")
+        # Leer origen
+        origin_indices = {}
+        for i in range(n_candidates):
+            name = input_data[ptr].strip()
+            origin_indices[name] = i # clave: nombre, valor: posición original
+            ptr += 1
+
+        # Leer Target 
+        target_stack = []
+        for _ in range(n_candidates):
+            target_stack.append(input_data[ptr].strip())
+            ptr += 1
+
+        # indice previo para comparar
+        prev_index = n_candidates + 1
+        move_from = -1
+        for i in range(n_candidates - 1, -1, -1):
+            target_turtle = target_stack[i]
+            origin_pos = origin_indices[target_turtle]
+
+            if origin_pos < prev_index:
+                prev_index = origin_pos
+            else:
+                move_from = i
+                break   
+
+        # Imprimir movimientos
+        if move_from != -1:
+            for i in range(move_from, -1, -1):
+                print(target_stack[i])
+
+        # Línea en blanco entre casos
+        print("")
 
 if __name__ == '__main__':
     solve()
-
+'''
 Origin:                     Target:                  Output:
 0. Yertle(0*)               0. Yertle                2->2 Sir Lancelot
 1. DukeofEarl(3)            5. Richard M. Nixon      5->1 Richard M. Nixon
@@ -56,3 +77,4 @@ asignar target position y nombre y posicion original
 revisar diferencia descendente.
 8,7,6,4,3,1,* 2,5,0
 * aqui el siguiente numero es mayor (2>1): hay que printar 2,5,0 (todos desde ahí)
+'''
