@@ -1,0 +1,93 @@
+Notas 18-02-2026 Combinatorics CACM
+
+Big numbers: java or python recommended
+
+Product Rule |A x B|
+Addition Rule |A + B| 
+Inclusion-Exclusion Formula |A U B|
+
+Permutaciones n! : nº de combinaciones diferentes de n elementos
+
+Subset: 2^n: nº de subconjuntos que podemos formar usando n elementos incluyendo el set vacío
+
+Combinations of m elements taken from n to n with repetitions m^n
+
+Hay que tener en cuenta lo rapido que crecen.
+
+Recursive functions
+
+PASCAL TRIANGLE: cada número es la suma de sus padres. 
+----------------- Hay una solución con Programacion Dinamica en vez de Recursividad.
+-       1       -
+-     1   1     -
+-   1   2   1   -
+- 1   3   3   1 -
+-----------------
+
+Binomial Coefficients 
+|(n)|
+|(k)|
+
+Fibonacci Numbers: iterative > recursive. Iterative is a simple example of Dynamic Programming
+
+Catalan numbers: all possible valid permutations of parenthesis in an expression.
+
+Fibonacci tiene 2 variantes: la que tiene f1=1, f2=2, y la que tiene f1=1, f2=2
+
+*******
+Problem
+*******
+[a,b] Incluidos, pueden ser Fibonnaci o NO.
+a <= b <= 10^100
+Hay que devolver en 1 linea con los nºs de fibonacci (fi); a <= fi <= b 
+Procompute 10^100, fuera del tiempo de ejecución.
+
+
+How many pieces of land? Problema:
+Enciclopedia de los numeros enteros, y buscamos: 1,2,4,8,16,31 (A000127)
+Su formula es a(n) = (n^4 - 6*n^3 + 23*n^2 - 18*n + 24)/24. Con esto usamos BigNumbers o Python Integers.
+"The Online Encyclopedia of Integer Sequences"
+
+
+6.6.3 Counting
+UVA 110603 / 10198
+Un niño confunde el 4 con el 1, para él son iguales.
+132 = 1+3+2 = 6
+112314 = 1+1+2+3+1+1 = 9
+
+Para n = 2 : 11,14,41,44, 2 ; 5 combinaciones
+Input: 1 <= n <= 1000. Precomputar las combinaciones para los 1.000 valores.
+Como 1000 tardaría mucho, mejor precomputar todo.
+
+1:  1,4 
+    = 2
+2:  11,14,41,44, 2
+    = 5
+3:  111,114,141,144,411,414,441,444 | 12,21 | 24,42 | 3
+    = 13
+4:  
+    = 2^4 para comb. de {1,4} + (2^2) *3 para comb. de
+
+11  -> 211  121 112:    El 2 puede ir en 3 posiciones
+14  -> 214  124 142:    El 2 puede ir en 3 posiciones
+41  -> 241  421 412:    El 2 puede ir en 3 posiciones
+44  -> 244  424 442:    El 2 puede ir en 3 posiciones
+    Por tanto aquí tenemos 4*3 = 12 combinaciones
+Para pasar de 4 a 5, por ejemplo, se puede añadir un 1 o un 4, en cada elemento de 4  y sus permutaciones. 
+Pero pueden salir repetidos si hacemos todas las permutaciones.
+
+Como regla general:
+Hay que sacar la formula para cada combinacion. Ejemplo:
+    Para sumar 1: 1, 4
+    Para sumar 4:
+                 -Combinaciones de {1,4}: 2^4
+                 -Combinaciones de {1,3}: 2^x
+                 -Combinaciones de {1,2}: 2^x
+                 -Combinaciones de {2,4}: 2^x ...
+
+a(n) = 2*a(n-1) + a(n-2) + a*(n-3) ? 
+
+
+ 6.6.7 Self-describing Sequence UVA: 110607 / x
+
+ 6.6.8 Steps: más fácil
