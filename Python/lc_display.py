@@ -14,7 +14,7 @@ def solve():
         '8': [1, 1, 1, 1, 1, 1, 1],
         '9': [1, 1, 1, 1, 1, 0, 1],
         '0': [1, 0, 1, 1, 1, 1, 1]
-    }
+    } # Ej: el número '0' tiene todo activado excepto el segmento medio
 
     input_data = sys.stdin.read().splitlines()
     
