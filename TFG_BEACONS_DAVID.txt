@@ -1,0 +1,8 @@
+TFG BEACONS
+
+BeaconLab (android app):
+	+Detectar Balizas y Comparar algoritmos
+	+Fingerprinting (calibración)
+	+Sistema de medición experimental
+	+Visualización y gestión del grid interactivo
+	

@@ -1,0 +1,84 @@
+25-02-26
+7.7.1 Light, more Light
+
+Cuadrados perfectos: nº par de switches
+No Cuadrados perfectos: nº impar de switches
+
+    1   2   3   4*  5   6   7   8   9*  10  11  12*
+1   on  on  on  on  on  on  on  on  on  on  on  on  
+2       off     off     off     off     off     off
+3           off         on          off         on
+4               on              on              off
+
+perfect square? sqrt(x) es int?, 
+(int)sqrt(n) == sqrt(n)? :yes, else: no
+
+mejor hacer esto debido al limite de precision:
+s = (int) sqrt(n)
+s*s ==n : yes or no
+
+7.6.2 CarmichaelNumbers
+
+Fermat Test => 
+'a' is a random number between 2 and n-1
+¿ a^n mod n = a ? Si lo pasan multiples veces probablemente sea primo
+
+Carmichael number: aquellos que pasan Fermat Test con todos los numeros por debajo suya
+
+Si no pasan Fermat Test: Es un numero normal
+Si SÍ pasan Fermat Test: puede ser Primo ó Carmichael
+
+Si 'y' es impar: x^y mod n = (((x mod n)^y/2 mod n)*... slides
+
+0 seconds solution: Carmichael numbers en un array precomputados.
+
+
+7.6.3 Euclid Problem
+Dados A y B, existen X, Y, D de tal forma que:
+AX + BY = D ; siendo D el maximo comun divisor de A y B
+
+
+7.6.4 Factovisors  # CUIDAO
+
+a divide b si existe un entero k que cumpla: k*a = b
+
+Hay que decir si m divide a n!
+
+Input
+6 9
+n= 6! = 1*2*3*4*5*6 = 1 * 2 * 3 * 2^2 * 5 * 3*2
+                              ^             ^
+m= 9 = 3^2
+
+Obtener the prime factorization of m
+
+{p,e} = {3,2}
+
+Solucion no aceptada por TimeExceed
+for( int i = p; i <= n && e>0; i+=p ¿or i++?)  # Sabemos que i es divisible por p
+    int j = i;
+    while(e>0 && j%p==0){
+        e--;
+        j /= p;
+    }
+return e==0;
+
+
+n= 6! = 1*2*3*4*5*6 = 1 * 2 * 3 * 2^2 * 5 * 3*2     7   2^3     3^2     2*5     11  2^2*3...
+                              3    -   -    3      -      -     3        -       -      3
+                                        5                                 5
+m = 10^4 === 2^4 * 5^4
+
+
+7.6.5 SummationofFourPrimes
+Input < 8 return  false
+Ejemplo
+Input = 46
+{2,3,5,7,11,13,17,19,23,29,31,37,41,43}
+
+Dividir entre 4 y buscar el primo mas proximo: ¿busqueda binaria?
+46 / 4 => 11
+
+46 - 2*11 - 3 = 21 no es primo, se descarta
+46 - 2*11 - 5 = 19 es primo, se usa
+Se supone que dividiendo por 4 se obtiene la solucion 100% or impossible
