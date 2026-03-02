@@ -6,3 +6,7 @@ BeaconLab (android app):
 	+Sistema de medición experimental
 	+Visualización y gestión del grid interactivo
 	
+
+BeaconLocalizationActivity: core
+
+Beacons ==> RSSI ==> BLE Scanner
