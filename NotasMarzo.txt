@@ -1,0 +1,73 @@
+110801 Little Bishops
+
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0     
+
+1 0 0 0
+0 2 0 0
+0 0 2 0
+0 0 0 2 
+
+1 1 0 0
+2 2 2 0
+0 0 2 2
+0 0 0 2 
+
+1 1 1 0
+2 3 2 2
+2 0 2 2  Si queremos hacer backtracking y colocar un 0 en vez de 1 (bishop) en cierta casilla,
+0 0 0 2     tan solo hay que restar 1 a las casillas afectadas por el bishop
+
+Además solo hay que revisar los 0's, ya que no vas a colocar un Bishop en una celda != 0
+
+Se pueden precomputar todas las posibilidades. Ademas no se pueden colocar por ejemplo 64 bishops en 8x8 (64 casillas). 
+Por tanto hay una formula que regula el numero maximo de bishops por tamaño de tablero.
+
+
+110802 Puzzle Problem
+     U 
+     |
+L --   -- R  ==> Mover las casilla vacia
+     |
+     D
+
+Hay una fórmula para saber si es Resoluble o no: para cada fila
+
+2 métodos,BFS dio mejor resultado que IDA*
+
+Configuraciones:
+
+(1)
+2u (3l) 4d 5r
+6u 7d 8r : no se puede repetir el movimiento previo (L)
+HashTable, cada configuracion es la key (ej: 2,3,4,0,1,5,7,8,9,6,10,12,13,14,11,15). Hay que comprobar si ya ha sido visitada.
+La primera vez se usan los 4 U,D,L,R. Para el resto se usan 3.
+
+Metaheuristica: Manhattan distance
+
+formula: G(distance) = alfa*F(counts of steps) + beta*H(Manhattan distance)
+
+
+Constraints;
+if G() < G* entonces no se explora (poda implicita)
+F() < 51 : stop
+explore candidates: most promising to least one
+
+Inicio: distancia Manhattan entre posicion inicial y target
+
+threshold + 45(equilibrado) ?? cual serian alfa y beta?
+
+idea 2: priority queue Heap ordenada por la formula G(). Cada vez que se explora se añade la configuracion a la cola (si cumple constraints)
+
+
+110803 queue
+Personas en una cola. Desde un extremo se ven P personas, desde el otro extremo se ven R personas. Debido a las alturas.
+
+1 <= N <= 13
+
+    |
+    |
+7 8 9 4 5 6 1 0 3 2 1
+Revisar slides. Combinatorias. Tambien se puede hacer con DP. Se debe precomputar.
