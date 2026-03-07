@@ -1,50 +1,45 @@
 import sys
 
 def solve():
-    # Number of cases
+    # Leer todo el input y dividirlo en líneas
     input_data = sys.stdin.read().splitlines()
-    if not input_data:
-        return
     
     ptr = 0
     n_cases = int(input_data[ptr])
     ptr += 1
 
     for case_id in range(n_cases): # Para cada caso
-        # recorrer líneas vacías
-        while ptr < len(input_data) and not input_data[ptr].strip(): 
-            ptr += 1
-        # if ptr >= len(input_data): break
-        n_candidates =  int(input_data[ptr].strip())
+        
+        n_turtles =  int(input_data[ptr].strip())
         ptr += 1
 
         # Leer origen
         origin_indices = {}
-        for i in range(n_candidates):
+        for i in range(n_turtles):
             name = input_data[ptr].strip()
             origin_indices[name] = i # clave: nombre, valor: posición original
             ptr += 1
 
         # Leer Target 
         target_stack = []
-        for _ in range(n_candidates):
+        for _ in range(n_turtles):
             target_stack.append(input_data[ptr].strip())
             ptr += 1
 
         # indice previo para comparar
-        prev_index = n_candidates + 1
+        prev_index = n_turtles + 1
         move_from = -1
-        for i in range(n_candidates - 1, -1, -1):
+        for i in range(n_turtles - 1, -1, -1): # Revisar de abajo hacia arriba
             target_turtle = target_stack[i]
             origin_pos = origin_indices[target_turtle]
 
             if origin_pos < prev_index:
                 prev_index = origin_pos
             else:
-                move_from = i
+                move_from = i # si encontramos un número mayor, entonces el movimiento empieza desde aquí
                 break   
 
-        # Imprimir movimientos
+        # Imprimir desde move_from hasta el final del stack target
         if move_from != -1:
             for i in range(move_from, -1, -1):
                 print(target_stack[i])
