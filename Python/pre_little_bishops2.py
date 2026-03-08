@@ -1,5 +1,6 @@
 import sys
 
+# La misma lógica de backtracking que definimos
 def update_matrix(matrix, n, r, c, delta):
     for dr, dc in [(1, 1), (1, -1), (-1, 1), (-1, -1)]:
         nr, nc = r + dr, c + dc
@@ -20,20 +21,18 @@ def backtrack(n, k, start_pos, k_colocados, matrix):
             update_matrix(matrix, n, r, c, -1)
     return total
 
-# --- GENERACIÓN DE LA TABLA ---
+# Generamos la tabla
 results = {}
 for n in range(1, 9):
-    print("Calculando para N =", n, "...")
-    max_k_posible = 2 * n - 1
     for k in range(n * n + 1):
-        if k == 0:
-            results[(n, k)] = 1
-        elif k > max_k_posible:
+        # Optimización: si k > 2n-1, es imposible
+        if k > (2 * n - 1):
             results[(n, k)] = 0
+        elif k == 0:
+            results[(n, k)] = 1
         else:
-            # Solo hacemos backtracking si es físicamente posible
-            mat = [[0] * n for _ in range(n)]
-            results[(n, k)] = backtrack(n, k, 0, 0, mat)
+            matrix = [[0] * n for _ in range(n)]
+            results[(n, k)] = backtrack(n, k, 0, 0, matrix)
 
-print("\n--- COPIR Y PEGAR EN CODIGO FINAL ---")
-print("TABLA = " + str(results))
+# ESTO ES LO QUE VAS A COPIAR
+print(results)
