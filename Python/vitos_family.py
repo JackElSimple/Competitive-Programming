@@ -1,6 +1,6 @@
 import sys
 
-def solve():
+def main():
     input_data = sys.stdin.read().split()
     if not input_data:
         return
@@ -36,4 +36,4 @@ def solve():
             break
 
 if __name__ == "__main__":
-    solve()
+    main()
