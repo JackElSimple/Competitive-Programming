@@ -1,0 +1,49 @@
+
+
+
+
+
+=====================
+*Strings*
+
+Automated Judge Script
+Where’s Waldorf?
+Doublets
+===================
+*Arithmetic and algebra* 
+
+Polynomial Coefficients
+Ones
+A Multiplication Game
+Pairsumonious ¿puzle algebraico?
+
+ TheArcheologist’sDilemma
+ TheStern-BrocotNumberSystem
+
+ ======================
+ *Combinatorics*
+
+ How Many Fibs?
+ Complete Tree Labeling
+
+ =======================
+ *DP*
+
+IsBiggerSmarter? . . . . . . . . . . . . . . . . . . . . . . . . 257
+ DistinctSubsequences . . . . . . . . . . . . . . . . . . . . . . 258
+ CuttingSticks . . . . . . . . . . . . . . . . . . . . . . . . . . . 262
+ UnidirectionalTSP . . . . . . . . . . . . . . . . . . . . . . . . 260
+11.6.3WeightsandMeasures . . . . . . . . . . . . . . . . . . . . . . 259
+11.6.6 FerryLoading . . . . . . . . . . . . . . . . . . . . . . . . . . . 263
+11.6.7 Chopsticks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 265
+11.6.8 AdventuresinMoving:PartIV
+
+Tips de Oro para DP en Python:
+from functools import lru_cache:
+Coloca @lru_cache(None) encima de tu función recursiva. Es la forma más rápida de convertir una función lenta en una DP con memoria.
+
+Evita objetos pesados:
+En las tablas de DP, usa listas de enteros simples. Si usas diccionarios como tablas, asegúrate de que las llaves sean tuplas pequeñas (i, j).
+
+Lectura de datos:
+Para problemas con muchos casos de prueba, usa sys.stdin.read().split() para cargar todo de golpe.
