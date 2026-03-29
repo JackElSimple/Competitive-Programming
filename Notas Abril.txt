@@ -1,0 +1,43 @@
+Necklace 10054
+
+si hay más de 2 colores impares no se pueden añadir al collar
+como el collar se debe cerrar, ninguno puede ser impar
+
+se pueden formar 2 collares diferentes -> some beads may be lost
+
+
+Raildoads 10039
+
+n_cases:       2
+n_cities:      3
+               Hamburg
+               Frankfurt
+               Darmstadt
+n_trains:      3
+t1_stops:      2
+               0949 Hamburg
+               1006 Frankfurt
+t2_stops:      2
+               1325 Hamburg
+               1550 Darmstadt
+t3_stops:      2
+               1205 Frankfurt
+               1411 Darmstadt
+0800
+Hamburg
+Darmstadt
+2
+Paris
+Tokyo
+1
+2
+0100 Paris
+2300 Tokyo
+0800
+Paris
+Tokyo
+
+Un array para cada posible minutos de llegada, empezar desde la ciudad target.
+
+
+The Grand Dinner
