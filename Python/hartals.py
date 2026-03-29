@@ -5,8 +5,8 @@ def solve():
     if not input_data: return
     it = iter(input_data)
     
-    num_cases = int(next(it))
-    for _ in range(num_cases):
+    ncases = int(next(it))
+    for _ in range(ncases):
         days = int(next(it))
         num_parties = int(next(it))
         h_parameters = [int(next(it)) for _ in range(num_parties)]

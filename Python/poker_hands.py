@@ -2,7 +2,7 @@ import sys
 
 def get_value(hand):
     # Asignar valores numéricos a las cartas
-    val_map = {str(i): i for i in range(2, 10)}
+    val_map = {str(a): a for a in range(2, 10)}
     val_map.update({'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14})
     
     values = sorted([val_map[c[0]] for c in hand], reverse=True)

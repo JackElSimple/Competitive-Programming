@@ -7,32 +7,32 @@ def solve():
         if not data:
             continue
         
-        n = data[0]
+        x = data[0]
         sequence = data[1:]
         
-        # Si n es 1, es Jolly por definición
-        if n == 1:
+        # Si x es 1, es Jolly por definición
+        if x == 1:
             print("Jolly")
             continue
             
         # Conjunto para rastrear las diferencias encontradas
-        found_diffs = [False] * n
+        found_diffs = [False] * x   
         is_jolly = True
         
-        for i in range(n - 1):
+        for i in range(x - 1):
             diff = abs(sequence[i] - sequence[i+1])
             
-            # La diferencia debe estar entre 1 y n-1
-            if 1 <= diff < n:
+            # La diferencia debe estar entre 1 y x-1
+            if 1 <= diff < x:
                 found_diffs[diff] = True
             else:
                 # Si una diferencia se sale del rango, no puede ser Jolly
                 is_jolly = False
                 break
         
-        # Verificamos si todas las diferencias del 1 al n-1 están marcadas
+        # Verificamos si todas las diferencias del 1 al x-1 están marcadas
         if is_jolly:
-            for i in range(1, n):
+            for i in range(1, x):
                 if not found_diffs[i]:
                     is_jolly = False
                     break

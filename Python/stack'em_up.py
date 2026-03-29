@@ -1,11 +1,11 @@
 import sys
 
 def solve():
-    input_data = sys.stdin.read().splitlines()
-    if not input_data:
+    input = sys.stdin.read().splitlines()
+    if not input:
         return
     
-    it = iter(input_data)
+    it = iter(input)
     try:
         line = next(it)
         while not line.strip(): line = next(it)
