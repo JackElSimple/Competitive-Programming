@@ -1,0 +1,10 @@
+SampleInput
+booster
+rooster
+roaster
+coasted
+roasted
+coastal
+postal
+boosterroasted
+coastalpostal

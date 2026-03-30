@@ -1,20 +1,7 @@
 
 
-
-
-
-=====================
-*Strings*
-
-Automated Judge Script
-Where’s Waldorf?
-Doublets
 ===================
 *Arithmetic and algebra* 
-
-Polynomial Coefficients
-Ones
-A Multiplication Game
 Pairsumonious ¿puzle algebraico?
 
  TheArcheologist’sDilemma
@@ -23,7 +10,6 @@ Pairsumonious ¿puzle algebraico?
  ======================
  *Combinatorics*
 
- How Many Fibs?
  Complete Tree Labeling
 
  =======================
